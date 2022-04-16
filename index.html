@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="index.css">
+    <script src="https://kit.fontawesome.com/8a4521f153.js" crossorigin="anonymous"></script>
+</head>
+<body>
+   <div id="cont">
+    <div id="navbar">
+        <div ><i  class="fa-solid fa-smog"></i></div>
+         <div>  <span>Weather Predictor App</span></div>
+     </div>
+     <div id="input">
+         <div><button onclick="getWeather()">Get Weather at Your Location</button>
+             <input type="text" name="" id="city" placeholder="Enter City Name">
+             <button id="sumbit" onclick="getData()">Submit</button></div>
+     </div>
+     <div id="outerContainer">
+         <div id="container"></div>
+     <div class="mapouter">
+         <div class="gmap_canvas">
+             <iframe width="600"
+              height="500"
+               id="gmap_canvas" 
+               frameborder="0"
+                scrolling="no"
+                 marginheight="0" 
+                 marginwidth="0">
+             </iframe>
+             
+                 </div>
+             </div>
+             
+             </div>
+            <div id="week">
+                
+               </div>
+                <div id="day">
+                   
+            </div>
+     </div>
+    
+  
+  
+</body>
+</html>
+<script src="index.js"></script>
