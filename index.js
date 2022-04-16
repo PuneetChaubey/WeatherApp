@@ -2,7 +2,6 @@
 function getData(){
     console.log("mai andar aa gya")
     let city = document.querySelector("#city").value;
-    // console.log(city)
     const url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=3d462ebf2278877607e76328f94fdf95`;
     fetch(url)
     .then(function(res){
@@ -24,7 +23,6 @@ function getDataLocation(lat,lon){
         return res.json();
     })
     .then(function(res){
-        console.log("res :", res)
         appendData(res)
     })
     .catch(function(err){
@@ -57,7 +55,6 @@ function appendData(data){
 }
   function dataFor7day(lat,lon){
       const url =`https://api.openweathermap.org/data/2.5/onecall?lat=${lat}&lon=${lon}&exclude={part}&appid=3d462ebf2278877607e76328f94fdf95`
-      console.log("url 2 :", url)
       fetch(url)
       .then(function(res){
           return res.json();
@@ -79,23 +76,16 @@ function appendData(data){
         label.innerText = "A Week Extended Forecast For The Current Location";
         div1.append(label)
         next.append(div1);
-
-        
         let day7div = document.querySelector("#day") 
-          
         console.log("aa gya" ,daily)
-        
            let i=0;
-        
         daily.map(function(el){
-           
             if(i!==0)
             {
                 console.log(el.temp.min)
             let div = document.createElement("div");
             let  min = document.createElement("p");
             min.innerText = `Min_Temp. : ${Math.round(el.temp.min-273)} °C`;
-            
             let max = document.createElement("p");
             max.innerText =`Max_Temp. : ${ Math.round(el.temp.max-273)} °C`;
             let days  = document.createElement("p");
@@ -114,7 +104,6 @@ function appendData(data){
     navigator.geolocation.getCurrentPosition(success)
     function success(position){
         var crd = position.coords;
-    
         console.log('Your current position is:');
         console.log(`Latitude : ${crd.latitude}`);
         console.log(`Longitude: ${crd.longitude}`);
